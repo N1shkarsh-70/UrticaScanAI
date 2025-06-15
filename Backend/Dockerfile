@@ -1,27 +1,28 @@
-# Use Python 3.10 image
+# Use Python 3.10 base image
 FROM python:3.10-slim
 
-# Set work directory
+# Set working directory
 WORKDIR /app
 
-# Install OS dependencies
+# Install system-level dependencies (fixes cv2/libGL error)
 RUN apt-get update && apt-get install -y \
     build-essential \
     libglib2.0-0 \
     libsm6 \
+    libxrender1 \
     libxext6 \
-    libxrender-dev \
+    libgl1-mesa-glx \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy all project files
+# Copy all project files to /app
 COPY . .
 
 # Install Python dependencies
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose the port
+# Expose your app port (same as uvicorn)
 EXPOSE 10000
 
-# Run the app
+# Start FastAPI app with Uvicorn
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "10000"]
