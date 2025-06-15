@@ -7,5 +7,5 @@ opencv-python
 Pillow
 torch
 torchvision
-tensorflow
+tensorflow==2.18.0
 gdown
