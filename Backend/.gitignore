@@ -1,0 +1,7 @@
+# .gitignore
+classification.h5
+Segmentation.keras
+venv/
+*.keras
+*.h5
+*.pth
