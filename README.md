@@ -12,7 +12,7 @@ This project aims to provide an AI-based early screening tool to help individual
 
 ---
 
-## 🧬 Classes of Skin Disease Detected
+## Classes of Skin Disease Detected
 
 The system classifies skin conditions into:
 
@@ -40,7 +40,7 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 | Home Page | 
 ![Home](https://github.com/user-attachments/assets/814c6938-2c40-4c1b-aaa1-7989e2f42752) | 
 | Upload & Predict|
-![Upload]![predict](https://github.com/user-attachments/assets/92bf97c9-d53a-425c-a7f3-fa47de715294)| 
+![Upload]!(https://github.com/user-attachments/assets/92bf97c9-d53a-425c-a7f3-fa47de715294)| 
 | Result Page |
 ![Result]![predict2](https://github.com/user-attachments/assets/01594b17-7c61-4697-bf45-73ea4238976a)
 
@@ -49,11 +49,11 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 
 ## 🛠️ Tech Stack Used
 
-### 👨‍💻 Frontend
+### Frontend
 - ReactJS
 - Tailwind CSS
 
-### 🧪 Backend
+### Backend
 - FastAPI (Python)
 - Tensorflow
 - Pytorch
