@@ -41,7 +41,8 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 
 | Home Page | Upload & Predict | Result Page |
 |-----------|------------------|-------------|
-| ![Home](screenshots/home.png) | ![Upload](screenshots/upload.png) | ![Result](screenshots/result.png) |
+| ![Home![Home](https://github.com/user-attachments/assets/814c6938-2c40-4c1b-aaa1-7989e2f42752)
+]() | ![Upload](screenshots/upload.png) | ![Result](screenshots/result.png) |
 
 ---
 
