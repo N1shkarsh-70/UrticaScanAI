@@ -47,7 +47,7 @@ Upload & Predict
 ![Upload](https://github.com/user-attachments/assets/92bf97c9-d53a-425c-a7f3-fa47de715294)
 
 Result Page
-![Result]![predict2](https://github.com/user-attachments/assets/01594b17-7c61-4697-bf45-73ea4238976a)
+![Result](https://github.com/user-attachments/assets/01594b17-7c61-4697-bf45-73ea4238976a)
 
 
 ---
