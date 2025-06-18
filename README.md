@@ -75,6 +75,17 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 
 ## 🏗️ System Architecture
 
-```mermaid
+
 ![resunet](https://github.com/user-attachments/assets/cf9fe087-fa7c-4521-b8d1-e2216cab3659)
+
+
+Disclaimer
+⚠️ This application is a pre-diagnostic tool and is not a replacement for professional medical advice. Always consult a dermatologist for clinical evaluation and treatment.
+
+
+🙌 Contributions
+Contributions, suggestions, and improvements are welcome!
+Feel free to fork the repo and open a pull request.
+
+
 
