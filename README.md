@@ -29,16 +29,16 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 
 ##  Key Features
 
-- 📸 Upload skin images for analysis
-- 🤖 AI classification using CNN (PyTorch)
-- 🧠 Skin region segmentation using U-Net (Keras)
-- 🖍️ Contour overlay on affected areas using OpenCV
-- 💡 Basic treatment suggestions based on severity
-- ⚙️ Modern, mobile-friendly frontend UI
+- Upload skin images for analysis
+- AI classification using CNN (PyTorch)
+- Skin region segmentation using U-Net (Keras)
+- Contour overlay on affected areas using OpenCV
+- Basic treatment suggestions based on severity
+- Modern, mobile-friendly frontend UI
 
 ---
 
-## 🖼Frontend Screenshots
+## Frontend Screenshots
 
 Home Page
 ![Home](https://github.com/user-attachments/assets/814c6938-2c40-4c1b-aaa1-7989e2f42752) 
