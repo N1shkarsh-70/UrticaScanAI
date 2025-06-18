@@ -88,7 +88,7 @@ Result Page
 
 
 ## Team & Contributors
-| Ankit Kumar Gola | [@Ankit](https://github.com/AkshrajKumar) | [LinkedIn](https://linkedin.com/in/chandan-ai) |
+| Ankit Kumar Gola | [@Ankit](https://github.com/AkshrajKumar)
 
 
 ## Disclaimer
