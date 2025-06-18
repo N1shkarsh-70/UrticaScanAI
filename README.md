@@ -9,6 +9,7 @@ UrticaScan AI is an AI-powered web application that detects **Dermatographia Urt
 **Dermatographia**, also known as *skin writing*, is a form of physical urticaria where light scratching leads to red, raised welts or hives. It affects about 2–5% of people globally and may be triggered by stress, infections, allergens, or unknown causes.
 
 This project aims to provide an AI-based early screening tool to help individuals and dermatologists identify and monitor symptoms efficiently.
+
 ![Screenshot 2025-06-18 230526](https://github.com/user-attachments/assets/3c18067a-1271-4e65-9cc2-f3acd96f2a93)
 
 
@@ -65,7 +66,7 @@ Result Page
 - Uvicorn(FastAPI)
 ---
 
-## 🧠 AI Models and Architecture
+## AI Models and Architecture
 
 ### 🔹 Classification Model
 - Framework: **PyTorch**
@@ -80,20 +81,24 @@ Result Page
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 
 ![resunet](https://github.com/user-attachments/assets/cf9fe087-fa7c-4521-b8d1-e2216cab3659)
 
 
 
-Disclaimer
+## Disclaimer
 ⚠️ This application is a pre-diagnostic tool and is not a replacement for professional medical advice. Always consult a dermatologist for clinical evaluation and treatment.
 
 
-🙌 Contributions
+## Contributions
 Contributions, suggestions, and improvements are welcome!
-Feel free to fork the repo and open a pull request.
+If you'd like to contribute, please follow these steps:
+- Fork the repository.
+- Create a new branch for your feature/bug fix.
+- Make your changes and test thoroughly.
+- Submit a pull request explaining your changes and the problem they solve.
 
 
 
