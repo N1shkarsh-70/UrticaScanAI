@@ -37,17 +37,19 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 
 ## 🖼Frontend Screenshots
 
-| Home Page | 
-![Home](https://github.com/user-attachments/assets/814c6938-2c40-4c1b-aaa1-7989e2f42752) | 
-| Upload & Predict|
+Home Page
+![Home](https://github.com/user-attachments/assets/814c6938-2c40-4c1b-aaa1-7989e2f42752) 
+
+Upload & Predict
 ![Upload](https://github.com/user-attachments/assets/92bf97c9-d53a-425c-a7f3-fa47de715294)| 
-| Result Page |
+
+Result Page
 ![Result]![predict2](https://github.com/user-attachments/assets/01594b17-7c61-4697-bf45-73ea4238976a)
 
 
 ---
 
-## 🛠️ Tech Stack Used
+## Tech Stack Used
 
 ### Frontend
 - ReactJS
@@ -65,12 +67,13 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 
 ### 🔹 Classification Model
 - Framework: **PyTorch**
+- Model:ResNet50
 - Type: Custom CNN
 - Task: Classify input image as Normal / Mild / Severe dermatographia
 
 ### 🔹 Segmentation Model
 - Framework: **TensorFlow / Keras**
-- Architecture: U-Net
+- Model: Resnet Encoder+U-Net
 - Task: Segment the inflamed areas of the skin
 
 ---
@@ -79,6 +82,7 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 
 
 ![resunet](https://github.com/user-attachments/assets/cf9fe087-fa7c-4521-b8d1-e2216cab3659)
+
 
 
 Disclaimer
