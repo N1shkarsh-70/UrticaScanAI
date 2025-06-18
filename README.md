@@ -31,7 +31,6 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 - 🧠 Skin region segmentation using U-Net (Keras)
 - 🖍️ Contour overlay on affected areas using OpenCV
 - 📄 PDF report generation of predictions and findings
-- 📧 Email delivery of the result
 - 💡 Basic treatment suggestions based on severity
 - ⚙️ Modern, mobile-friendly frontend UI
 
@@ -41,7 +40,8 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 
 | Home Page | Upload & Predict | Result Page |
 |-----------|------------------|-------------|
-| ![Home](https://github.com/user-attachments/assets/814c6938-2c40-4c1b-aaa1-7989e2f42752) | ![Upload]![predict](https://github.com/user-attachments/assets/92bf97c9-d53a-425c-a7f3-fa47de715294)| ![Result] |
+| ![Home](https://github.com/user-attachments/assets/814c6938-2c40-4c1b-aaa1-7989e2f42752) | ![Upload]![predict](https://github.com/user-attachments/assets/92bf97c9-d53a-425c-a7f3-fa47de715294)| ![Result]![predict2](https://github.com/user-attachments/assets/01594b17-7c61-4697-bf45-73ea4238976a)
+|
 
 ---
 
@@ -50,18 +50,13 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 ### 👨‍💻 Frontend
 - ReactJS
 - Tailwind CSS
-- Axios
-- File Input Preview
-- Toast Notifications
 
 ### 🧪 Backend
 - FastAPI (Python)
-- Pydantic
+- Tensorflow
+- Pytorch
 - OpenCV
-- ReportLab (PDF)
-- smtplib (email)
-- Uvicorn (ASGI server)
-
+- Uvicorn(FastAPI)
 ---
 
 ## 🧠 AI Models and Architecture
@@ -81,3 +76,5 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 ## 🏗️ System Architecture
 
 ```mermaid
+![resunet](https://github.com/user-attachments/assets/cf9fe087-fa7c-4521-b8d1-e2216cab3659)
+
