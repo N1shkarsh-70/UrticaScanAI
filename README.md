@@ -81,13 +81,3 @@ The segmentation module pinpoints affected areas to visually assist diagnosis.
 ## 🏗️ System Architecture
 
 ```mermaid
-graph TD
-A[User Uploads Image] --> B[Frontend (React)]
-B --> C[API Request to FastAPI Backend]
-C --> D[Classification Model (PyTorch)]
-C --> E[Segmentation Model (Keras)]
-D --> F[Classification Result]
-E --> G[Segmentation Mask]
-F & G --> H[OpenCV Contour + Final Output]
-H --> I[PDF Generation + Email Sending]
-I --> J[Return Results to User]
