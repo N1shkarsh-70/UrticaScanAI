@@ -87,6 +87,9 @@ Result Page
 ![resunet](https://github.com/user-attachments/assets/cf9fe087-fa7c-4521-b8d1-e2216cab3659)
 
 
+## Team & Contributors
+| Ankit Kumar Gola | [@Ankit](https://github.com/AkshrajKumar) | [LinkedIn](https://linkedin.com/in/chandan-ai) |
+
 
 ## Disclaimer
 ⚠️ This application is a pre-diagnostic tool and is not a replacement for professional medical advice. Always consult a dermatologist for clinical evaluation and treatment.
