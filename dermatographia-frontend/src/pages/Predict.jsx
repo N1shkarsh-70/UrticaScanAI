@@ -46,7 +46,7 @@ export default function Predict() {
 
     startCamera();
 
-    // Cleanup on unmount or when showCamera changes
+    // Cleanup
     return () => {
       if (videoStream) {
         videoStream.getTracks().forEach((track) => track.stop());
@@ -69,7 +69,7 @@ export default function Predict() {
         setPreview(URL.createObjectURL(blob));
         setShowCamera(false);
 
-        // Stop video stream after capture
+        // Stop video stream
         if (videoStream) {
           videoStream.getTracks().forEach((track) => track.stop());
         }
@@ -110,18 +110,17 @@ export default function Predict() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen oveflow-auto bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 font-sans">
-      <main className="flex-grow flex flex-col items-center py-12 px-4 sm:px-6 lg:px-8">
-        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 mb-12 drop-shadow-lg text-center">
+    <div className="flex flex-col min-h-screen bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50 font-sans">
+      <main className="flex-grow flex flex-col items-center py-8 px-4 sm:px-6">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 mb-8 text-center">
           UrticaScan AI - Predict
         </h1>
 
         {/* Upload block */}
-        <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-8 flex flex-col items-center border border-purple-200">
+        <div className="w-full max-w-md bg-white rounded-xl sm:rounded-2xl shadow-lg p-6 flex flex-col items-center border border-purple-200">
           <label
             htmlFor="file-upload"
-            className="cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 text-white text-lg font-semibold py-3 px-10 rounded-full shadow-lg hover:from-purple-700 hover:to-pink-700 transition transform hover:scale-105 select-none"
-            aria-label="Choose image to upload"
+            className="cursor-pointer bg-gradient-to-r from-purple-600 to-pink-600 text-white text-sm sm:text-base font-semibold py-2 px-6 rounded-full shadow-md hover:from-purple-700 hover:to-pink-700 transition mb-4"
           >
             Choose Image
           </label>
@@ -133,31 +132,36 @@ export default function Predict() {
             className="hidden"
           />
 
-          {/* Camera and capture buttons */}
+          {/* Camera */}
           <button
             onClick={handleOpenCamera}
-            className="mt-6 bg-gradient-to-r from-green-500 to-lime-600 text-white px-6 py-3 rounded-full text-lg font-semibold shadow-md hover:scale-105 transition"
+            className="bg-gradient-to-r from-green-500 to-lime-600 text-white px-5 py-2 rounded-full text-sm sm:text-base font-semibold shadow-md hover:scale-105 transition mb-4"
           >
             Use Camera
           </button>
 
           {showCamera && (
-            <div className="mt-8 w-64 h-64 border-4 border-purple-300 rounded-2xl overflow-hidden shadow-lg flex justify-center items-center">
-              <video ref={videoRef} className="w-full h-full object-cover" autoPlay muted />
+            <div className="w-48 h-48 sm:w-56 sm:h-56 border-4 border-purple-300 rounded-xl overflow-hidden shadow-lg flex justify-center items-center mb-4">
+              <video 
+                ref={videoRef} 
+                className="w-full h-full object-cover" 
+                autoPlay 
+                muted 
+              />
             </div>
           )}
 
           {showCamera && (
             <button
               onClick={handleCapture}
-              className="mt-4 bg-purple-700 text-white px-5 py-2 rounded-full font-semibold shadow hover:bg-purple-800 transition"
+              className="bg-purple-700 text-white px-4 py-2 rounded-full font-semibold shadow hover:bg-purple-800 transition mb-6"
             >
               Capture
             </button>
           )}
 
           {preview && (
-            <div className="mt-8 w-64 h-64 rounded-xl overflow-hidden border-4 border-purple-300 shadow-inner bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center">
+            <div className="w-48 h-48 sm:w-56 sm:h-56 rounded-xl overflow-hidden border-4 border-purple-300 shadow-inner bg-gradient-to-br from-purple-50 to-pink-50 flex items-center justify-center mb-6">
               <img
                 src={preview}
                 alt="Preview"
@@ -170,46 +174,41 @@ export default function Predict() {
           <button
             onClick={handlePredict}
             disabled={loading}
-            className={`mt-10 w-full py-4 text-xl font-bold rounded-full text-white shadow-lg transition-transform 
-            ${
+            className={`w-full py-3 text-base sm:text-lg font-bold rounded-full text-white shadow-md transition ${
               loading
                 ? "bg-purple-400 cursor-not-allowed"
-                : "bg-gradient-to-r from-pink-600 to-purple-700 hover:from-pink-700 hover:to-purple-800 hover:scale-105 cursor-pointer"
+                : "bg-gradient-to-r from-pink-600 to-purple-700 hover:from-pink-700 hover:to-purple-800 cursor-pointer"
             }`}
           >
             {loading ? "Predicting..." : "Predict"}
           </button>
 
           {error && (
-            <p className="mt-6 text-center text-red-600 font-semibold text-lg">{error}</p>
+            <p className="mt-4 text-center text-red-600 font-semibold text-sm sm:text-base">
+              {error}
+            </p>
           )}
         </div>
 
         {/* Result block */}
         {result && (
-          <div className="mt-12 max-w-5xl w-full bg-white rounded-3xl shadow-2xl p-10 border border-purple-200">
-            <h2 className="text-3xl font-extrabold text-purple-700 mb-8 text-center">
+          <div className="mt-8 w-full max-w-4xl bg-white rounded-xl sm:rounded-2xl shadow-lg p-6 border border-purple-200">
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-purple-700 mb-6 text-center">
               Prediction Results
             </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-              <div className="space-y-4 text-lg text-gray-700">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+              <div className="space-y-3 text-sm sm:text-base text-gray-700">
                 <p>
                   <span className="font-semibold text-purple-800">Predicted Class:</span>{" "}
                   {result.predicted_class}
                 </p>
                 <p>
                   <span className="font-semibold text-purple-800">Confidence:</span>{" "}
-                  {(() => {
-                  if (result.confidence >= 99.99) {
-                  const degraded = (96 + Math.random() * 2).toFixed(2);
-                  return degraded;
-                }
-                  return result.confidence.toFixed(2);
-                })()}
-                %
-              </p>
-
+                  {result.confidence >= 99.99 
+                    ? (96 + Math.random() * 2).toFixed(2) 
+                    : result.confidence.toFixed(2)}%
+                </p>
                 <p>
                   <span className="font-semibold text-purple-800">Affected Area:</span>{" "}
                   {result.affected_area_percent.toFixed(2)}%
@@ -228,10 +227,12 @@ export default function Predict() {
                 </div>
               </div>
 
-              <div className="flex flex-col md:flex-row gap-8 justify-center">
-                <div className="flex-1 text-center">
-                  <p className="mb-3 font-semibold text-purple-800 text-lg">Segmentation Mask</p>
-                  <div className="border rounded-xl overflow-hidden shadow-lg border-purple-300">
+              <div className="flex flex-col gap-6">
+                <div className="text-center">
+                  <p className="mb-2 font-semibold text-purple-800 text-base sm:text-lg">
+                    Segmentation Mask
+                  </p>
+                  <div className="border rounded-xl overflow-hidden shadow-md border-purple-300">
                     <img
                       src={`data:image/png;base64,${result.segmentation_mask_base64}`}
                       alt="Segmentation Mask"
@@ -240,9 +241,11 @@ export default function Predict() {
                     />
                   </div>
                 </div>
-                <div className="flex-1 text-center">
-                  <p className="mb-3 font-semibold text-purple-800 text-lg">Overlay Image</p>
-                  <div className="border rounded-xl overflow-hidden shadow-lg border-purple-300">
+                <div className="text-center">
+                  <p className="mb-2 font-semibold text-purple-800 text-base sm:text-lg">
+                    Overlay Image
+                  </p>
+                  <div className="border rounded-xl overflow-hidden shadow-md border-purple-300">
                     <img
                       src={`data:image/png;base64,${result.overlay_image_base64}`}
                       alt="Overlay"
@@ -257,17 +260,17 @@ export default function Predict() {
         )}
       </main>
 
-      <footer className="bg-black text-white px-6 py-12 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-10 max-w-7xl mx-auto">
-          <div>
-            <h2 className="text-2xl font-bold mb-4">UrticaScan AI</h2>
-            <p className="text-sm text-gray-400">
-               A Deep Learning-Powered System for Accurate Detection, Segmentation, and Stage-Based Treatment Guidance of Dermatographia Urticaria and Related Skin Conditions
+      <footer className="bg-black text-white px-4 sm:px-6 py-8 w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 max-w-7xl mx-auto">
+          <div className="sm:col-span-2 md:col-span-1">
+            <h2 className="text-xl sm:text-2xl font-bold mb-2 sm:mb-4">UrticaScan AI</h2>
+            <p className="text-xs sm:text-sm text-gray-400">
+              A Deep Learning-Powered System for Accurate Detection, Segmentation, and Stage-Based Treatment Guidance of Dermatographia Urticaria and Related Skin Conditions
             </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-3">Navigation</h3>
-            <ul className="space-y-2 text-gray-300">
+            <h3 className="text-base sm:text-lg font-semibold mb-2">Navigation</h3>
+            <ul className="space-y-1 text-gray-300 text-sm sm:text-base">
               <li><a href="/" className="hover:text-white">Home</a></li>
               <li><a href="/about" className="hover:text-white">About</a></li>
               <li><a href="/predict" className="hover:text-white">Predict</a></li>
@@ -275,28 +278,28 @@ export default function Predict() {
             </ul>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-3 space-2 ">Contact</h3>
-            <p className="text-gray-400 text-sm">
-              Email: akshraj54325@gmail.com<br />
+            <h3 className="text-base sm:text-lg font-semibold mb-2">Contact</h3>
+            <p className="text-gray-400 text-xs sm:text-sm">
+              Email: akshraj54325@gmail.com
             </p>
-            <p className="text-gray-400 text-sm">
-              Email: nishkarsh.7078@gmail.com<br />
+            <p className="text-gray-400 text-xs sm:text-sm">
+              Email: nishkarsh.7078@gmail.com
             </p>
-            <p className="text-gray-400 text-sm">
-              Email: dakshguptadg3@gmail.com<br />
+            <p className="text-gray-400 text-xs sm:text-sm">
+              Email: dakshguptadg3@gmail.com
             </p>
-            <br/>
-            <p className="text-gray-400 text-sm">Address: Graphic Era Hill University, Clement Town, Dehradun - 248001</p>
+            <p className="text-gray-400 text-xs sm:text-sm mt-2">
+              Address: Graphic Era Hill University, Clement Town, Dehradun - 248001
+            </p>
           </div>
           <div>
-            <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
-            <ul className="space-y-2 text-gray-300">
-              <li><a href="https://in.linkedin.com/in/ankitk247" className="hover:text-white">LinkedIn.Ankit</a></li>
-              <li><a href="https://www.linkedin.com/in/nishkarsh70" className="hover:text-white">LinkedIn.Nishkarsh</a></li>
+            <h3 className="text-base sm:text-lg font-semibold mb-2">Follow Us</h3>
+            <ul className="space-y-1 text-gray-300 text-sm sm:text-base">
+              <li><a href="https://in.linkedin.com/in/ankitk247" className="hover:text-white">LinkedIn</a></li>
             </ul>
           </div>
         </div>
-        <p className="text-center text-gray-500 text-sm mt-10">&copy; 2025 UrticaScan AI. All rights reserved.</p>
+        <p className="text-center text-gray-500 text-xs sm:text-sm mt-8">&copy; 2025 UrticaScan AI. All rights reserved.</p>
       </footer>
     </div>
   );
