@@ -63,7 +63,6 @@ Result Page
 - Tensorflow
 - Pytorch
 - OpenCV
-- Uvicorn(FastAPI)
 ---
 
 ## AI Models and Architecture
